@@ -1,3 +1,9 @@
+/packages/openapi_v2.json
+/packages/k8sapi/doc/
+/packages/k8sapi/lib/model/*.g.dart
+/packages/k8sapi/lib/*.g.dart
+/packages/k8sapi/README.md
+
 # Miscellaneous
 *.class
 *.log

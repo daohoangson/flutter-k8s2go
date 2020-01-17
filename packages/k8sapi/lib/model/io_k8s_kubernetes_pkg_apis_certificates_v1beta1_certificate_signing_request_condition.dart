@@ -1,0 +1,16 @@
+        import 'package:built_value/built_value.dart';
+import 'package:built_value/serializer.dart';
+
+part 'io_k8s_kubernetes_pkg_apis_certificates_v1beta1_certificate_signing_request_condition.g.dart';
+
+abstract class IoK8sKubernetesPkgApisCertificatesV1beta1CertificateSigningRequestCondition implements Built<IoK8sKubernetesPkgApisCertificatesV1beta1CertificateSigningRequestCondition, IoK8sKubernetesPkgApisCertificatesV1beta1CertificateSigningRequestConditionBuilder> {
+
+
+    // Boilerplate code needed to wire-up generated code
+    IoK8sKubernetesPkgApisCertificatesV1beta1CertificateSigningRequestCondition._();
+
+    factory IoK8sKubernetesPkgApisCertificatesV1beta1CertificateSigningRequestCondition([updates(IoK8sKubernetesPkgApisCertificatesV1beta1CertificateSigningRequestConditionBuilder b)]) = _$IoK8sKubernetesPkgApisCertificatesV1beta1CertificateSigningRequestCondition;
+    static Serializer<IoK8sKubernetesPkgApisCertificatesV1beta1CertificateSigningRequestCondition> get serializer => _$ioK8sKubernetesPkgApisCertificatesV1beta1CertificateSigningRequestConditionSerializer;
+
+}
+

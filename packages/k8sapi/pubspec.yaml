@@ -1,0 +1,17 @@
+name: k8sapi
+version: 1.0.0
+description: OpenAPI API client
+environment:
+    sdk: ">=2.3.0 <3.0.0"
+dependencies:
+    dio: ^3.0.4
+    built_value:
+      path: /Users/sondh/repos/flutter.d/built_value.dart/built_value
+    built_collection: ^4.2.2
+    time_machine: ^0.9.12
+dev_dependencies:
+    built_value_generator:
+      path: /Users/sondh/repos/flutter.d/built_value.dart/built_value_generator
+    build_runner:
+      path: /Users/sondh/repos/flutter.d/build/build_runner
+    # test: 1.6.5
