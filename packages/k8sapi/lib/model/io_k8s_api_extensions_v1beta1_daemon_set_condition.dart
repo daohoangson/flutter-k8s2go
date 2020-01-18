@@ -9,7 +9,7 @@ abstract class IoK8sApiExtensionsV1beta1DaemonSetCondition implements Built<IoK8
     /* Time is a wrapper around time.Time which supports correct marshaling to YAML and JSON.  Wrappers are provided for many of the factory methods that the time package offers. */
         @nullable
     @BuiltValueField(wireName: r'lastTransitionTime')
-    LocalDateTime get lastTransitionTime;
+    OffsetDateTime get lastTransitionTime;
     /* A human readable message indicating details about the transition. */
         @nullable
     @BuiltValueField(wireName: r'message')

@@ -9,7 +9,7 @@ abstract class IoK8sApiCoordinationV1beta1LeaseSpec implements Built<IoK8sApiCoo
     /* MicroTime is version of Time with microsecond level precision. */
         @nullable
     @BuiltValueField(wireName: r'acquireTime')
-    LocalDateTime get acquireTime;
+    OffsetDateTime get acquireTime;
     /* holderIdentity contains the identity of the holder of a current lease. */
         @nullable
     @BuiltValueField(wireName: r'holderIdentity')
@@ -25,7 +25,7 @@ abstract class IoK8sApiCoordinationV1beta1LeaseSpec implements Built<IoK8sApiCoo
     /* MicroTime is version of Time with microsecond level precision. */
         @nullable
     @BuiltValueField(wireName: r'renewTime')
-    LocalDateTime get renewTime;
+    OffsetDateTime get renewTime;
 
     // Boilerplate code needed to wire-up generated code
     IoK8sApiCoordinationV1beta1LeaseSpec._();

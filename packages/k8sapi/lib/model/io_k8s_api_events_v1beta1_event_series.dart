@@ -13,7 +13,7 @@ abstract class IoK8sApiEventsV1beta1EventSeries implements Built<IoK8sApiEventsV
     /* MicroTime is version of Time with microsecond level precision. */
         @nullable
     @BuiltValueField(wireName: r'lastObservedTime')
-    LocalDateTime get lastObservedTime;
+    OffsetDateTime get lastObservedTime;
     /* Information whether this series is ongoing or finished. */
         @nullable
     @BuiltValueField(wireName: r'state')

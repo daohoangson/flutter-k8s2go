@@ -17,7 +17,7 @@ abstract class IoK8sApiCoreV1Taint implements Built<IoK8sApiCoreV1Taint, IoK8sAp
     /* Time is a wrapper around time.Time which supports correct marshaling to YAML and JSON.  Wrappers are provided for many of the factory methods that the time package offers. */
         @nullable
     @BuiltValueField(wireName: r'timeAdded')
-    LocalDateTime get timeAdded;
+    OffsetDateTime get timeAdded;
     /* Required. The taint value corresponding to the taint key. */
         @nullable
     @BuiltValueField(wireName: r'value')

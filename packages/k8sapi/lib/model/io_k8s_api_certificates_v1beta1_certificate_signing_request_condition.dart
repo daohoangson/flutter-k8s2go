@@ -9,7 +9,7 @@ abstract class IoK8sApiCertificatesV1beta1CertificateSigningRequestCondition imp
     /* Time is a wrapper around time.Time which supports correct marshaling to YAML and JSON.  Wrappers are provided for many of the factory methods that the time package offers. */
         @nullable
     @BuiltValueField(wireName: r'lastUpdateTime')
-    LocalDateTime get lastUpdateTime;
+    OffsetDateTime get lastUpdateTime;
     /* human readable message with details about the request state */
         @nullable
     @BuiltValueField(wireName: r'message')

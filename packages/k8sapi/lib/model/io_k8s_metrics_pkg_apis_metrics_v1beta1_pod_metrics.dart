@@ -29,7 +29,7 @@ abstract class IoK8sMetricsPkgApisMetricsV1beta1PodMetrics implements Built<IoK8
     /* Time is a wrapper around time.Time which supports correct marshaling to YAML and JSON.  Wrappers are provided for many of the factory methods that the time package offers. */
         @nullable
     @BuiltValueField(wireName: r'timestamp')
-    LocalDateTime get timestamp;
+    OffsetDateTime get timestamp;
     
         @nullable
     @BuiltValueField(wireName: r'window')

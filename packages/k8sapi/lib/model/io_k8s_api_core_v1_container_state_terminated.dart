@@ -17,7 +17,7 @@ abstract class IoK8sApiCoreV1ContainerStateTerminated implements Built<IoK8sApiC
     /* Time is a wrapper around time.Time which supports correct marshaling to YAML and JSON.  Wrappers are provided for many of the factory methods that the time package offers. */
         @nullable
     @BuiltValueField(wireName: r'finishedAt')
-    LocalDateTime get finishedAt;
+    OffsetDateTime get finishedAt;
     /* Message regarding the last termination of the container */
         @nullable
     @BuiltValueField(wireName: r'message')
@@ -33,7 +33,7 @@ abstract class IoK8sApiCoreV1ContainerStateTerminated implements Built<IoK8sApiC
     /* Time is a wrapper around time.Time which supports correct marshaling to YAML and JSON.  Wrappers are provided for many of the factory methods that the time package offers. */
         @nullable
     @BuiltValueField(wireName: r'startedAt')
-    LocalDateTime get startedAt;
+    OffsetDateTime get startedAt;
 
     // Boilerplate code needed to wire-up generated code
     IoK8sApiCoreV1ContainerStateTerminated._();

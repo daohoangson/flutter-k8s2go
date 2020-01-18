@@ -25,11 +25,11 @@ abstract class IoK8sApiCoreV1Event implements Built<IoK8sApiCoreV1Event, IoK8sAp
     /* MicroTime is version of Time with microsecond level precision. */
         @nullable
     @BuiltValueField(wireName: r'eventTime')
-    LocalDateTime get eventTime;
+    OffsetDateTime get eventTime;
     /* Time is a wrapper around time.Time which supports correct marshaling to YAML and JSON.  Wrappers are provided for many of the factory methods that the time package offers. */
         @nullable
     @BuiltValueField(wireName: r'firstTimestamp')
-    LocalDateTime get firstTimestamp;
+    OffsetDateTime get firstTimestamp;
     
         @nullable
     @BuiltValueField(wireName: r'involvedObject')
@@ -41,7 +41,7 @@ abstract class IoK8sApiCoreV1Event implements Built<IoK8sApiCoreV1Event, IoK8sAp
     /* Time is a wrapper around time.Time which supports correct marshaling to YAML and JSON.  Wrappers are provided for many of the factory methods that the time package offers. */
         @nullable
     @BuiltValueField(wireName: r'lastTimestamp')
-    LocalDateTime get lastTimestamp;
+    OffsetDateTime get lastTimestamp;
     /* A human-readable description of the status of this operation. */
         @nullable
     @BuiltValueField(wireName: r'message')

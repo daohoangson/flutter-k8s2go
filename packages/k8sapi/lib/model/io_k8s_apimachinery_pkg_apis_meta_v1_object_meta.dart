@@ -20,7 +20,7 @@ abstract class IoK8sApimachineryPkgApisMetaV1ObjectMeta implements Built<IoK8sAp
     /* Time is a wrapper around time.Time which supports correct marshaling to YAML and JSON.  Wrappers are provided for many of the factory methods that the time package offers. */
         @nullable
     @BuiltValueField(wireName: r'creationTimestamp')
-    LocalDateTime get creationTimestamp;
+    OffsetDateTime get creationTimestamp;
     /* Number of seconds allowed for this object to gracefully terminate before it will be removed from the system. Only set when deletionTimestamp is also set. May only be shortened. Read-only. */
         @nullable
     @BuiltValueField(wireName: r'deletionGracePeriodSeconds')
@@ -28,7 +28,7 @@ abstract class IoK8sApimachineryPkgApisMetaV1ObjectMeta implements Built<IoK8sAp
     /* Time is a wrapper around time.Time which supports correct marshaling to YAML and JSON.  Wrappers are provided for many of the factory methods that the time package offers. */
         @nullable
     @BuiltValueField(wireName: r'deletionTimestamp')
-    LocalDateTime get deletionTimestamp;
+    OffsetDateTime get deletionTimestamp;
     /* Must be empty before the object is deleted from the registry. Each entry is an identifier for the responsible component that will remove the entry from the list. If the deletionTimestamp of the object is non-nil, entries in this list can only be removed. */
         @nullable
     @BuiltValueField(wireName: r'finalizers')

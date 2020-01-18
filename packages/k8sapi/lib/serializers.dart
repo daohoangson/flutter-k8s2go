@@ -4151,6 +4151,6 @@ const FullType(BuiltList, const [const FullType(IoK8sMetricsPkgApisMetricsV1beta
 
 Serializers standardSerializers =
 (serializers.toBuilder()
-..add(LocalDateSerializer())
-..add(LocalDateTimeSerializer())
+..add(OffsetDateSerializer())
+..add(OffsetDateTimeSerializer())
 ..addPlugin(StandardJsonPlugin())).build();

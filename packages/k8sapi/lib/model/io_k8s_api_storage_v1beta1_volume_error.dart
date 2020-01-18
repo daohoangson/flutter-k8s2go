@@ -13,7 +13,7 @@ abstract class IoK8sApiStorageV1beta1VolumeError implements Built<IoK8sApiStorag
     /* Time is a wrapper around time.Time which supports correct marshaling to YAML and JSON.  Wrappers are provided for many of the factory methods that the time package offers. */
         @nullable
     @BuiltValueField(wireName: r'time')
-    LocalDateTime get time;
+    OffsetDateTime get time;
 
     // Boilerplate code needed to wire-up generated code
     IoK8sApiStorageV1beta1VolumeError._();

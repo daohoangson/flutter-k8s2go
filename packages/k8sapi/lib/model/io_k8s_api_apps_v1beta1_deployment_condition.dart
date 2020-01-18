@@ -9,11 +9,11 @@ abstract class IoK8sApiAppsV1beta1DeploymentCondition implements Built<IoK8sApiA
     /* Time is a wrapper around time.Time which supports correct marshaling to YAML and JSON.  Wrappers are provided for many of the factory methods that the time package offers. */
         @nullable
     @BuiltValueField(wireName: r'lastTransitionTime')
-    LocalDateTime get lastTransitionTime;
+    OffsetDateTime get lastTransitionTime;
     /* Time is a wrapper around time.Time which supports correct marshaling to YAML and JSON.  Wrappers are provided for many of the factory methods that the time package offers. */
         @nullable
     @BuiltValueField(wireName: r'lastUpdateTime')
-    LocalDateTime get lastUpdateTime;
+    OffsetDateTime get lastUpdateTime;
     /* A human readable message indicating details about the transition. */
         @nullable
     @BuiltValueField(wireName: r'message')

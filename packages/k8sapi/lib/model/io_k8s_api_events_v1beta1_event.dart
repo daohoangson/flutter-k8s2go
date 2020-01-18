@@ -25,11 +25,11 @@ abstract class IoK8sApiEventsV1beta1Event implements Built<IoK8sApiEventsV1beta1
     /* Time is a wrapper around time.Time which supports correct marshaling to YAML and JSON.  Wrappers are provided for many of the factory methods that the time package offers. */
         @nullable
     @BuiltValueField(wireName: r'deprecatedFirstTimestamp')
-    LocalDateTime get deprecatedFirstTimestamp;
+    OffsetDateTime get deprecatedFirstTimestamp;
     /* Time is a wrapper around time.Time which supports correct marshaling to YAML and JSON.  Wrappers are provided for many of the factory methods that the time package offers. */
         @nullable
     @BuiltValueField(wireName: r'deprecatedLastTimestamp')
-    LocalDateTime get deprecatedLastTimestamp;
+    OffsetDateTime get deprecatedLastTimestamp;
     
         @nullable
     @BuiltValueField(wireName: r'deprecatedSource')
@@ -37,7 +37,7 @@ abstract class IoK8sApiEventsV1beta1Event implements Built<IoK8sApiEventsV1beta1
     /* MicroTime is version of Time with microsecond level precision. */
         @nullable
     @BuiltValueField(wireName: r'eventTime')
-    LocalDateTime get eventTime;
+    OffsetDateTime get eventTime;
     /* Kind is a string value representing the REST resource this object represents. Servers may infer this from the endpoint the client submits requests to. Cannot be updated. In CamelCase. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#types-kinds */
         @nullable
     @BuiltValueField(wireName: r'kind')

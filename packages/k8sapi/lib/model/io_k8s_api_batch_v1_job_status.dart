@@ -15,7 +15,7 @@ abstract class IoK8sApiBatchV1JobStatus implements Built<IoK8sApiBatchV1JobStatu
     /* Time is a wrapper around time.Time which supports correct marshaling to YAML and JSON.  Wrappers are provided for many of the factory methods that the time package offers. */
         @nullable
     @BuiltValueField(wireName: r'completionTime')
-    LocalDateTime get completionTime;
+    OffsetDateTime get completionTime;
     /* The latest available observations of an object's current state. More info: https://kubernetes.io/docs/concepts/workloads/controllers/jobs-run-to-completion/ */
         @nullable
     @BuiltValueField(wireName: r'conditions')
@@ -27,7 +27,7 @@ abstract class IoK8sApiBatchV1JobStatus implements Built<IoK8sApiBatchV1JobStatu
     /* Time is a wrapper around time.Time which supports correct marshaling to YAML and JSON.  Wrappers are provided for many of the factory methods that the time package offers. */
         @nullable
     @BuiltValueField(wireName: r'startTime')
-    LocalDateTime get startTime;
+    OffsetDateTime get startTime;
     /* The number of pods which reached phase Succeeded. */
         @nullable
     @BuiltValueField(wireName: r'succeeded')

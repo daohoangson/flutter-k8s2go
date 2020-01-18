@@ -52,7 +52,7 @@ abstract class IoK8sApiCoreV1PodStatus implements Built<IoK8sApiCoreV1PodStatus,
     /* Time is a wrapper around time.Time which supports correct marshaling to YAML and JSON.  Wrappers are provided for many of the factory methods that the time package offers. */
         @nullable
     @BuiltValueField(wireName: r'startTime')
-    LocalDateTime get startTime;
+    OffsetDateTime get startTime;
 
     // Boilerplate code needed to wire-up generated code
     IoK8sApiCoreV1PodStatus._();

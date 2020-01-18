@@ -20,7 +20,9 @@ if [ ! -f "$_jsonPath" ]; then
     $K8S_SERVER/openapi/v2
 fi
 
-# TODO: switch to `docker run` version when our PR is merged
+# TODO: switch to `docker run` version when the related PRs are merged
+# https://github.com/OpenAPITools/openapi-generator/pull/5027
+# https://github.com/google/built_value.dart/pull/804
 # docker run --rm -v $PWD:$PWD -w $PWD openapitools/openapi-generator-cli generate \
 java -jar ~/repos/openapi-generator/modules/openapi-generator-cli/target/openapi-generator-cli.jar generate \
   --config ./k8sapi.yml \

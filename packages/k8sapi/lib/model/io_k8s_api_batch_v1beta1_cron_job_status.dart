@@ -15,7 +15,7 @@ abstract class IoK8sApiBatchV1beta1CronJobStatus implements Built<IoK8sApiBatchV
     /* Time is a wrapper around time.Time which supports correct marshaling to YAML and JSON.  Wrappers are provided for many of the factory methods that the time package offers. */
         @nullable
     @BuiltValueField(wireName: r'lastScheduleTime')
-    LocalDateTime get lastScheduleTime;
+    OffsetDateTime get lastScheduleTime;
 
     // Boilerplate code needed to wire-up generated code
     IoK8sApiBatchV1beta1CronJobStatus._();

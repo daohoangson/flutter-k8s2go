@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:k8s2go/db/db.dart';
 import 'package:k8sapi/model/io_k8s_api_core_v1_namespace.dart';
 import 'package:k8sapi/model/io_k8s_api_core_v1_pod.dart';
+import 'package:time_machine/time_machine.dart';
 
 class PodListScreen extends StatefulWidget {
   final Cluster cluster;
@@ -54,7 +55,9 @@ class _PodListState extends State<PodListScreen> {
         child: ListTile(
           title: Text(pod.metadata.name),
           subtitle: Text(
-            pod.status.phase,
+            pod.metadata.creationTimestamp
+                .inZone(DateTimeZone.local)
+                .toString(),
             maxLines: 1,
             overflow: TextOverflow.ellipsis,
           ),

@@ -9,7 +9,7 @@ abstract class IoK8sApiCoreV1ContainerStateRunning implements Built<IoK8sApiCore
     /* Time is a wrapper around time.Time which supports correct marshaling to YAML and JSON.  Wrappers are provided for many of the factory methods that the time package offers. */
         @nullable
     @BuiltValueField(wireName: r'startedAt')
-    LocalDateTime get startedAt;
+    OffsetDateTime get startedAt;
 
     // Boilerplate code needed to wire-up generated code
     IoK8sApiCoreV1ContainerStateRunning._();

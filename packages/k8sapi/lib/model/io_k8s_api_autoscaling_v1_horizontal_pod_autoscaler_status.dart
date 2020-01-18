@@ -21,7 +21,7 @@ abstract class IoK8sApiAutoscalingV1HorizontalPodAutoscalerStatus implements Bui
     /* Time is a wrapper around time.Time which supports correct marshaling to YAML and JSON.  Wrappers are provided for many of the factory methods that the time package offers. */
         @nullable
     @BuiltValueField(wireName: r'lastScaleTime')
-    LocalDateTime get lastScaleTime;
+    OffsetDateTime get lastScaleTime;
     /* most recent generation observed by this autoscaler. */
         @nullable
     @BuiltValueField(wireName: r'observedGeneration')

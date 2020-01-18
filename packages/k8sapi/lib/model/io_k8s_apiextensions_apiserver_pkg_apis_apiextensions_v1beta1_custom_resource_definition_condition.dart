@@ -9,7 +9,7 @@ abstract class IoK8sApiextensionsApiserverPkgApisApiextensionsV1beta1CustomResou
     /* Time is a wrapper around time.Time which supports correct marshaling to YAML and JSON.  Wrappers are provided for many of the factory methods that the time package offers. */
         @nullable
     @BuiltValueField(wireName: r'lastTransitionTime')
-    LocalDateTime get lastTransitionTime;
+    OffsetDateTime get lastTransitionTime;
     /* Human-readable message indicating details about last transition. */
         @nullable
     @BuiltValueField(wireName: r'message')

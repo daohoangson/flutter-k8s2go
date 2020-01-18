@@ -9,7 +9,7 @@ abstract class IoK8sApiAutoscalingV2beta2HorizontalPodAutoscalerCondition implem
     /* Time is a wrapper around time.Time which supports correct marshaling to YAML and JSON.  Wrappers are provided for many of the factory methods that the time package offers. */
         @nullable
     @BuiltValueField(wireName: r'lastTransitionTime')
-    LocalDateTime get lastTransitionTime;
+    OffsetDateTime get lastTransitionTime;
     /* message is a human-readable explanation containing details about the transition */
         @nullable
     @BuiltValueField(wireName: r'message')

@@ -9,11 +9,11 @@ abstract class IoK8sApiBatchV1JobCondition implements Built<IoK8sApiBatchV1JobCo
     /* Time is a wrapper around time.Time which supports correct marshaling to YAML and JSON.  Wrappers are provided for many of the factory methods that the time package offers. */
         @nullable
     @BuiltValueField(wireName: r'lastProbeTime')
-    LocalDateTime get lastProbeTime;
+    OffsetDateTime get lastProbeTime;
     /* Time is a wrapper around time.Time which supports correct marshaling to YAML and JSON.  Wrappers are provided for many of the factory methods that the time package offers. */
         @nullable
     @BuiltValueField(wireName: r'lastTransitionTime')
-    LocalDateTime get lastTransitionTime;
+    OffsetDateTime get lastTransitionTime;
     /* Human readable message indicating details about last transition. */
         @nullable
     @BuiltValueField(wireName: r'message')
