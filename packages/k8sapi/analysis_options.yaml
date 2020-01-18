@@ -1,1 +1,4 @@
 analyzer:
+  errors:
+    unused_import: ignore
+    unused_field: ignore
