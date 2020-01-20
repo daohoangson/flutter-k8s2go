@@ -25,23 +25,16 @@ class PodListWidget extends StatelessWidget {
       );
 
   Widget _buildItem(BuildContext context, IoK8sApiCoreV1Pod pod) => Card(
-        child: Stack(
-          children: <Widget>[
-            ListTile(
-              title: Text(pod.metadata.name),
-              subtitle: Padding(
-                padding: const EdgeInsets.symmetric(vertical: 4),
-                child: LabelListWidget(
-                  metadata: pod.metadata,
-                  onPress: (_, __) => {},
-                ),
-              ),
+        child: ListTile(
+          title: Text(pod.metadata.name),
+          subtitle: Padding(
+            padding: const EdgeInsets.symmetric(vertical: 4),
+            child: LabelListWidget(
+              metadata: pod.metadata,
+              onPress: (_, __) => {},
             ),
-            Align(
-              alignment: Alignment.topRight,
-              child: _PodStatusPhaseWidget(pod: pod),
-            )
-          ],
+          ),
+          trailing: _PodStatusPhaseWidget(pod: pod),
         ),
       );
 }
