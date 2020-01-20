@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:k8s2go/db/db.dart';
 import 'package:k8s2go/screens/namespace_list.dart';
+import 'package:k8s2go/widgets/resource_list.dart';
 
-class ClusterListScreen extends StatefulWidget {
+class ClusterListScreen extends StatelessWidget {
   final Db db;
 
   ClusterListScreen({
@@ -11,27 +12,11 @@ class ClusterListScreen extends StatefulWidget {
   }) : super(key: key);
 
   @override
-  State<ClusterListScreen> createState() => _ClusterListState();
-}
-
-class _ClusterListState extends State<ClusterListScreen> {
-  final List<Cluster> clusters = [];
-
-  @override
-  void initState() {
-    super.initState();
-
-    widget.db
-        .getClusters()
-        .then((result) => setState(() => clusters.addAll(result)));
-  }
-
-  @override
   Widget build(BuildContext context) => Scaffold(
         appBar: AppBar(title: Text('Clusters')),
-        body: ListView.builder(
-          itemBuilder: (context, i) => _buildItem(context, clusters[i]),
-          itemCount: clusters.length,
+        body: ResourceListWidget(
+          builder: _buildItem,
+          getter: (_) => db.getClusters(),
         ),
       );
 
