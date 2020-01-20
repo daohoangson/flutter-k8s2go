@@ -9,13 +9,19 @@ import 'package:k8sapi/model/io_k8s_api_core_v1_namespace.dart';
 
 class NamespaceViewScreen extends StatefulWidget {
   final Cluster cluster;
+  final String name;
   final IoK8sApiCoreV1Namespace namespace;
 
   NamespaceViewScreen({
     @required this.cluster,
     Key key,
-    @required this.namespace,
-  }) : super(key: key);
+    this.name,
+    this.namespace,
+  })  : assert(
+          (name == null) != (namespace == null),
+          'Either `name` or `namespace` must be set',
+        ),
+        super(key: key);
 
   @override
   State<NamespaceViewScreen> createState() => _NamespaceViewState();
@@ -33,7 +39,7 @@ class _NamespaceViewState extends State<NamespaceViewScreen>
 
   TabController _tabController;
 
-  String get name => widget.namespace.metadata.name;
+  String get name => widget.name ?? widget.namespace.metadata.name;
 
   @override
   void initState() {

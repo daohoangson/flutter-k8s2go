@@ -34,7 +34,7 @@ class Cluster {
         ),
         assert(
           (clientCertificate == null) != (token == null),
-          'Client certificate and token cannot be used together',
+          'Either client certificate or token must be set',
         );
 
   K8sapi get api {

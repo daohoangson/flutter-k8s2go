@@ -6,6 +6,7 @@ import 'package:k8sapi/model/io_k8s_api_core_v1_namespace.dart';
 
 class NamespaceListScreen extends StatelessWidget {
   final Cluster cluster;
+  final _inputDialogTextEditingController = TextEditingController();
 
   NamespaceListScreen({
     @required this.cluster,
@@ -14,7 +15,15 @@ class NamespaceListScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) => Scaffold(
-        appBar: AppBar(title: Text('Namespaces')),
+        appBar: AppBar(
+          title: Text('Namespaces'),
+          actions: <Widget>[
+            IconButton(
+              icon: Icon(Icons.input, semanticLabel: 'Go to namespace'),
+              onPressed: () => _showInputDialog(context),
+            ),
+          ],
+        ),
         body: ResourceListWidget(
           builder: _buildItem,
           getter: (cancelToken) => cluster.api
@@ -31,6 +40,27 @@ class NamespaceListScreen extends StatelessWidget {
             builder: (_) =>
                 NamespaceViewScreen(cluster: cluster, namespace: ns),
           )),
+        ),
+      );
+
+  void _showInputDialog(BuildContext context) => showDialog(
+        context: context,
+        builder: (_) => AlertDialog(
+          content: TextField(
+            controller: _inputDialogTextEditingController,
+            decoration: InputDecoration(hintText: "Namespace to go to"),
+          ),
+          actions: <Widget>[
+            FlatButton(
+              child: Text('GO'),
+              onPressed: () => Navigator.of(context).push(MaterialPageRoute(
+                builder: (_) => NamespaceViewScreen(
+                  cluster: cluster,
+                  name: _inputDialogTextEditingController.value.text,
+                ),
+              )),
+            )
+          ],
         ),
       );
 }
