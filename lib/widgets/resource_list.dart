@@ -34,6 +34,7 @@ class ResourceListWidget<T> extends StatefulWidget {
 
 class _ResourceListState<T> extends State<ResourceListWidget<T>> {
   final CancelToken cancelToken = CancelToken();
+  final keyRefreshIndicator = GlobalKey<RefreshIndicatorState>();
 
   List<T> items;
 
@@ -41,10 +42,8 @@ class _ResourceListState<T> extends State<ResourceListWidget<T>> {
   void initState() {
     super.initState();
 
-    widget.getter(cancelToken).then((result) => setState(() {
-          items = [];
-          items.addAll(result);
-        }));
+    WidgetsBinding.instance
+        .addPostFrameCallback((_) => keyRefreshIndicator.currentState?.show());
   }
 
   @override
@@ -54,20 +53,16 @@ class _ResourceListState<T> extends State<ResourceListWidget<T>> {
   }
 
   @override
-  Widget build(BuildContext context) => ListView.builder(
-        itemBuilder: _buildItem,
-        itemCount: max(1, items?.length ?? 0),
+  Widget build(BuildContext context) => RefreshIndicator(
+        child: ListView.builder(
+          itemBuilder: _buildItem,
+          itemCount: items == null ? 0 : max(1, items.length),
+        ),
+        key: keyRefreshIndicator,
+        onRefresh: _getItems,
       );
 
   Widget _buildItem(BuildContext context, int index) {
-    if (items == null)
-      return const Center(
-        child: Padding(
-          padding: EdgeInsets.all(8),
-          child: CircularProgressIndicator(),
-        ),
-      );
-
     if (items.length == 0)
       return const Center(
         child: Padding(
@@ -77,5 +72,24 @@ class _ResourceListState<T> extends State<ResourceListWidget<T>> {
       );
 
     return widget.builder(context, items[index]);
+  }
+
+  Future<void> _getItems() async {
+    setState(() => items = null);
+
+    await widget.getter(cancelToken).then(
+      (result) => setState(() {
+        items = [];
+        items.addAll(result);
+      }),
+      onError: (error) {
+        if (!mounted) return debugPrint("${widget.getter} -> $error");
+
+        setState(() => items = []);
+
+        final message = error is DioError ? error.message : error.toString();
+        Scaffold.of(context).showSnackBar(SnackBar(content: Text(message)));
+      },
+    );
   }
 }
