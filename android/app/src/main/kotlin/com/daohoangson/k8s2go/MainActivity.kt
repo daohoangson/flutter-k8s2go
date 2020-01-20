@@ -1,4 +1,4 @@
-package com.example.k8s2go
+package com.daohoangson.k8s2go
 
 import androidx.annotation.NonNull;
 import io.flutter.embedding.android.FlutterActivity

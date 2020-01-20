@@ -1,1 +1,3 @@
+/android/key.properties filter=git-crypt diff=git-crypt
+/android/app/release.jks filter=git-crypt diff=git-crypt
 /lib/db/demo.dart filter=git-crypt diff=git-crypt
